@@ -1,4 +1,4 @@
-cnlll@xxx.com
-5-----------------
-2d-----------------
-cm.xza.com
+cloudflare的邮箱cnlll@xxx.com
+cloudflare的邮箱api_key
+cloudflare的邮箱zone_id
+cloudflare的域名比如cm.xza.com
