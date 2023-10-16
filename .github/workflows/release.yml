@@ -22,7 +22,8 @@ jobs:
           goos: ${{ matrix.goos }}
           goarch: ${{ matrix.goarch }}
           project_path: "./"  # 或者你的项目的实际路径
-          binary_name: "your_project"
+          binary_name: "ddns"  # 更新为你的项目的实际名称
           ldflags: "-s -w"
           extra_files: LICENSE Readme.md
+
 
