@@ -21,7 +21,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           goos: ${{ matrix.goos }}
           goarch: ${{ matrix.goarch }}
-          project_path: "./cmd/your_project"
+          project_path: "./"  # 或者你的项目的实际路径
           binary_name: "your_project"
           ldflags: "-s -w"
           extra_files: LICENSE Readme.md
+
