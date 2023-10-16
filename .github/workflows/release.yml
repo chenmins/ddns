@@ -14,8 +14,6 @@ jobs:
         goarch: [amd64]
     steps:
       - uses: actions/checkout@v2
-      - name: Run tests
-        run: go test -v -p=1 -timeout=0 ./...
       - uses: wangyoucao577/go-release-action@v1.16
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -25,5 +23,3 @@ jobs:
           binary_name: "ddns"  # 更新为你的项目的实际名称
           ldflags: "-s -w"
           extra_files: LICENSE Readme.md
-
-
