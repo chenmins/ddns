@@ -45,6 +45,9 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: List contents of dist directory
+        run: find dist -type f
+
       - name: Copy binary to root directory
         run: cp dist/linux_amd64/${{ github.repository }} .
 
