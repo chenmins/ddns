@@ -28,9 +28,10 @@ jobs:
           context: .
           push: true
           tags: chenmins/ddns:latest  # 更改为你的Docker Hub用户名和镜像名称
-          build-args: # 此处应该是 build-args 而不是 args
-            GITHUB_USERNAME: chenmins
-            REPO_NAME: ddns
-            VERSION: ${{ github.ref_name }}
-            BINARY_NAME: ddns.${{ github.ref_name }}.Linux_x86_64.tar.gz  # 根据你的二进制文件名和版本模式修改
+          args: |
+            GITHUB_USERNAME=chenmins
+            REPO_NAME=${{ github.repository }}
+            VERSION=${{ github.ref_name }}
+            BINARY_NAME=ddns.${{ github.ref_name }}.Linux_x86_64.tar.gz  # 根据你的二进制文件名和版本模式修改
+      
 
