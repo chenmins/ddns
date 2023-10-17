@@ -26,6 +26,8 @@ type DNSRecord struct {
 	Type    string `json:"type"`
 	Name    string `json:"name"`
 	Content string `json:"content"`
+	TTL     int    `json:"ttl,omitempty"` // Add ttl
+
 }
 
 type RecordResponse struct {
@@ -110,6 +112,7 @@ func updateDNSRecord(email string, apiKey string, zoneID string, domain string) 
 			Type:    "A",
 			Name:    domain,
 			Content: ipAddress,
+			TTL:     60,
 		}
 		data, err := json.Marshal(updateData)
 		if err != nil {
@@ -149,6 +152,7 @@ func updateDNSRecord(email string, apiKey string, zoneID string, domain string) 
 			Type:    "A",
 			Name:    domain,
 			Content: ipAddress,
+			TTL:     60,
 		}
 		data, err := json.Marshal(createData)
 		if err != nil {
