@@ -49,7 +49,7 @@ jobs:
         run: find dist -type f
 
       - name: Copy binary to root directory
-        run: cp dist/ddns_linux_amd64_v1/${{ github.repository }} .
+        run: cp dist/ddns_linux_amd64_v1/ddns .
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
