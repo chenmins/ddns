@@ -28,7 +28,7 @@ jobs:
           context: .
           push: true
           tags: chenmins/ddns:latest  # 更改为你的Docker Hub用户名和镜像名称
-          args: |
+          build-args: |
             GITHUB_USERNAME=chenmins
             REPO_NAME=${{ github.repository }}
             VERSION=${{ github.ref_name }}
