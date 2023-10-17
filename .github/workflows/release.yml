@@ -45,14 +45,12 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
           tags: ${{ github.repository_owner }}/${{ github.repository }}:latest  # 更改为你的Docker Hub用户名和镜像名称
-          build-args: |
-            GITHUB_USERNAME=${{ github.repository_owner }}
-            REPO_NAME=${{ github.repository }}
-            VERSION=${{ github.ref_name }}
-            BINARY_NAME=ddns.${{ github.ref_name }}.Linux_x86_64.tar.gz  # 根据你的二进制文件名和版本模式修改
+          # 添加下面这一行来复制二进制文件到Docker构建上下文中
+          outputs: type=docker,dest=/tmp/docker-image.tar
