@@ -52,5 +52,3 @@ jobs:
           context: .
           push: true
           tags: ${{ github.repository_owner }}/${{ github.repository }}:latest  # 更改为你的Docker Hub用户名和镜像名称
-          # 添加下面这一行来复制二进制文件到Docker构建上下文中
-          outputs: type=docker,dest=/tmp/docker-image.tar
