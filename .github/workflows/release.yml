@@ -46,7 +46,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Copy binary to root directory
-        run: cp dist/linux_amd64/<project-name> .
+        run: cp dist/linux_amd64/${{ github.repository }} .
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
